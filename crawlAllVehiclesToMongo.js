@@ -5,8 +5,8 @@ radius = 3500
 zip = 48331
 yearStart = 2019
 yearEnd = 2019
-minPrice = 98000
-maxPrice = 120000
+minPrice = 75000
+maxPrice = 105000
 
 // Export this stuff
 exportFromVehicle = 
