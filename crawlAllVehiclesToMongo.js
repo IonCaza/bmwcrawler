@@ -1,12 +1,12 @@
 const axios = require('axios');
 
 // Search For
-radius = 3500
+radius = 350
 zip = 48331
 yearStart = 2019
-yearEnd = 2019
+yearEnd = 2020
 minPrice = 75000
-maxPrice = 105000
+maxPrice = 100000
 
 // Export this stuff
 exportFromVehicle = 
@@ -15,17 +15,22 @@ exportFromVehicle =
     'totalMsrp', 
     'dealer.businessName', 
     'dealer.phone', 
-    'dealer.url']
+    'dealer.url',
+    'dealer.city', 
+    'dealer.state', 
+    'dealer.zipCode',]
     
 const url = 'https://www.bmwusa.com/api/inventory/filter/search/'
 vehicles = ''
 
-axios.post(url + zip + '?page=1&resultsPerPage=500&sortBy=PRICE&sortOrder=ASC', 
+axios.post(url + zip + '?page=1&resultsPerPage=5000&sortBy=PRICE&sortOrder=ASC', 
 {
     //selectedSeries: ["M"],
     //selectedModels: ["M5"],
+    selectedSeries: ["5"],
+    selectedModels: ["M550i"],
     selectedMinPrice: minPrice,
-    selectedMinPrice: maxPrice,
+    selectedMaxPrice: maxPrice,
     selectedLocatorRange: radius,
     selectedMinModelYear: yearStart,
     selectedMaxModelYear: yearEnd,
